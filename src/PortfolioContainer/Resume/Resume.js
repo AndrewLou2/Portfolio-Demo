@@ -96,7 +96,7 @@ const Resume = (props) => {
     <div className="resume-screen-container" key="education">
       <ResumeHeading
         heading={"University of Western Ontario"}
-        subHeading={"Bachelor of Engineering in Software Engineering"}
+        subHeading={"Bachelor of Engineering Science in Software Engineering"}
         fromDate={"2019"}
         toDate={"2024"}
       />
@@ -110,45 +110,40 @@ const Resume = (props) => {
 
     /* WORK EXPERIENCE */
     <div className="resume-screen-container" key="work-experience">
-      <div className="experience-container">
-        <ResumeHeading
-          heading={"J.D. Power"}
-          subHeading={"Software Engineer Intern"}
-          fromDate={"May2022"}
-          toDate={"Present"}
-        />
-        <div className="experience-description">
-          <span className="resume-description-text">
-            - Architected and implemented 8 features that enhances the overall
-            efficiency of search, sort and collection of vehicle data using Java
-            and GWT.{" "}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            - Designed and built an efficient algorithm to reduce the Spring
-            Boot automation testing run-time by 30%.{" "}
-          </span>
-          <br />
-          <span className="resume-description-text">
-            - Integrated and maintained various mySQL queries which improved the
-            input/output of vehicle data.{" "}
-          </span>
-          <br />
-          <br />
-        </div>
-        <ResumeHeading
-          heading={"UWO Sunstang"}
-          subHeading={"Software Project Team Lead"}
-          fromDate={"Sep2021"}
-          toDate={"May2022"}
-        />
-        <div className="experience-description-text">
-          <span className="resume-description-text">
-            - Coordinated a team of 12 engineering students forthe steering
-            wheel, infotainment system and the chase cartelemetry project
-          </span>
-          <br />
-        </div>
+      <div className="experience-container"></div>
+      <ResumeHeading
+        heading={"Godwise International"}
+        subHeading={"Software Developer"}
+        fromDate={"Sep2023"}
+        toDate={"Present"}
+      />
+      <div className="experience-description-text">
+        <span className="resume-description-text">
+          - Created and enhanced an internal ERP system using JavaScript,
+          ASP.NET, and Microsoft SQL Server(MSSQL), improving operational
+          efficiently and data management capabilities
+        </span>
+        <br />
+      </div>
+      <ResumeHeading
+        heading={"J.D. Power"}
+        subHeading={"Software Developer"}
+        fromDate={"May2022"}
+        toDate={"Sep2023"}
+      />
+      <div className="experience-description">
+        <span className="resume-description-text">
+          - Optimized data organization by setting up and deploying a feature
+          that queries mutually inclusive data across multiple projects using
+          Angular, Java, and Kubernetes, leading to more efficient data
+          management for users{" "}
+        </span>
+        <br />
+        <span className="resume-description-text">
+          - Improved data I/O efficiency by 40% for vehicle data integration
+          through the integration and optimization of MySQL queries across
+          multiple data stores, significantly enhancing system responsiveness{" "}
+        </span>
       </div>
     </div>,
 
