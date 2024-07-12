@@ -69,26 +69,26 @@ const Resume = (props) => {
 
   const projectsDetails = [
     {
-      title: "OS Chat Room App",
-      duration: { fromDate: " ", toDate: "Dec 2021" },
+      title: "Multisite Validation of Ventilation CNNs",
+      duration: { fromDate: "May 2024", toDate: "July 2024" },
       description:
-        "A multi-user multi-transaction application that allows text communication between clients over different operating system environments",
-      subHeading: "C++, Pytyon",
+        "Developed an image processing pipeline using deep neural networks (NN) using Python and scikit-learn that provides an efficient evaluation of lung health for clinical practices",
+
+      subHeading: "Python, MatLab, Pandas",
+    },
+    {
+      title: "Meal Buddy AI",
+      duration: { fromDate: "September 2023", toDate: "May 2024" },
+      description:
+        "Created a full-stack responsive mobile app that suggests home cook recipes for users using generative AI",
+      subHeading: "React Native, Pytyon",
     },
     {
       title: "Personal Portfolio Website",
-      duration: { fromDate: " ", toDate: "Nov 2021" },
+      duration: { fromDate: " ", toDate: "Nov 2023" },
       description:
         "A Full-Stack Responsive Personal Portfolio website for show-casing myself.",
       subHeading: "React JS, Bootsrap, Express Js, Node Js",
-    },
-    {
-      title: "Discord Server Bot ",
-      duration: { fromDate: " ", toDate: "Jul 2021" },
-      description:
-        "A discord bot that provides 140+ user with a fun experience.",
-
-      subHeading: "Python, Discord.py, RESTful API",
     },
   ];
 
@@ -119,16 +119,19 @@ const Resume = (props) => {
         />
         <div className="experience-description">
           <span className="resume-description-text">
-            - Architected and implemented 8 features that enhances the overall efficiency of search, sort and collection of vehicle data
-using Java and GWT.{" "}
+            - Architected and implemented 8 features that enhances the overall
+            efficiency of search, sort and collection of vehicle data using Java
+            and GWT.{" "}
           </span>
           <br />
           <span className="resume-description-text">
-            - Designed and built an efficient algorithm to reduce the Spring Boot automation testing run-time by 30%.{" "}
+            - Designed and built an efficient algorithm to reduce the Spring
+            Boot automation testing run-time by 30%.{" "}
           </span>
           <br />
           <span className="resume-description-text">
-            -  Integrated and maintained various mySQL queries which improved the input/output of vehicle data.{" "}
+            - Integrated and maintained various mySQL queries which improved the
+            input/output of vehicle data.{" "}
           </span>
           <br />
           <br />
