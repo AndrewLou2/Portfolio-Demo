@@ -7,6 +7,7 @@ import ScrollService from "../../../utilities/ScrollService";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
+import bongoGif from "../../../images/bongo-cat.gif";
 
 export default function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);
@@ -71,6 +72,7 @@ export default function Header() {
         </div>
         <div className="header-logo">
           <span>ANDREW LOU~</span>
+          <img class="bongo" src={bongoGif} alt="image not loaded" />
         </div>
         <div
           className={
