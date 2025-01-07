@@ -8,10 +8,14 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Header.css";
 import bongoGif from "../../../images/bongo-cat.gif";
+import SecretScreen from "../SecretScreen/SecretScreen";
 
 export default function Header() {
   const [selectedScreen, setSelectedScreen] = useState(0);
   const [showHeaderOptions, setShowHeaderOptions] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [inputPassword, setInputPassword] = useState("");
+  const [showSecretScreen, setShowSecretScreen] = useState(false);
 
   const updateCurrentScreen = (currentScreen) => {
     if (!currentScreen || !currentScreen.screenInView) return;
@@ -19,6 +23,7 @@ export default function Header() {
     let screenIndex = GET_SCREEN_INDEX(currentScreen.screenInView);
     if (screenIndex < 0) return;
   };
+
   let currentScreenSubscription =
     ScrollService.currentScreenBroadcaster.subscribe(updateCurrentScreen);
 
@@ -58,11 +63,30 @@ export default function Header() {
     };
   }, [currentScreenSubscription]);
 
+  const handleBongoClick = () => {
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+    setInputPassword("");
+  };
+
+  const handlePasswordSubmit = () => {
+    if (inputPassword === "01082024") {
+      setShowPopup(false);
+      setShowSecretScreen(true);
+    } else {
+      alert("Incorrect password. Please try again.");
+    }
+  };
+
+  const closeSecretScreen = () => {
+    setShowSecretScreen(false);
+  };
+
   return (
-    <div
-      className="header-container"
-      onClick={() => setShowHeaderOptions(!showHeaderOptions)}
-    >
+    <div className="header-container">
       <div className="header-parent">
         <div
           className="header-hamburger"
@@ -72,7 +96,12 @@ export default function Header() {
         </div>
         <div className="header-logo">
           <span>ANDREW LOU~</span>
-          <img class="bongo" src={bongoGif} alt="image not loaded" />
+          <img
+            className="bongo"
+            src={bongoGif}
+            alt="image not loaded"
+            onClick={handleBongoClick}
+          />
         </div>
         <div
           className={
@@ -84,6 +113,33 @@ export default function Header() {
           {getHeaderOptions()}
         </div>
       </div>
+
+      {/* Popup Modal */}
+      {showPopup && (
+        <div className="popup-overlay">
+          <div className="popup-content">
+            <h2>Enter Password</h2>
+            <input
+              type="password"
+              value={inputPassword}
+              onChange={(e) => setInputPassword(e.target.value)}
+              placeholder="Enter password"
+              className="password-input"
+            />
+            <button onClick={handlePasswordSubmit} className="submit-btn">
+              Submit
+            </button>
+            <button onClick={closePopup} className="close-popup-btn">
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Secret Screen Component */}
+      {showSecretScreen && (
+        <SecretScreen closeSecretScreen={closeSecretScreen} />
+      )}
     </div>
   );
 }
